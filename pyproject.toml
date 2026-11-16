@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantum-learning-copy-cost"
+version = "1.0.0"
+description = "The Copy Cost of Incompatibility: joint measurability, unsharp POVMs and the sample complexity of learning with incompatible quantum observables"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Ferhat Özgur Catak" }]
+keywords = ["quantum learning theory", "sample complexity", "incompatible observables", "joint measurability",
+            "POVM", "unsharp measurement", "semidefinite programming", "qiskit", "randomized measurements",
+            "readout error mitigation"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.urls]
+Repository = "https://github.com/ocatak/quantum-learning-copy-cost"
+Issues = "https://github.com/ocatak/quantum-learning-copy-cost/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: statistical tests (run by default; deselect with -m 'not slow')"]

@@ -1,0 +1,26 @@
+# quantum-learning-copy-cost
+
+> Reproducible Python code for the preprint "The Copy Cost of Incompatibility" (F. Ö. Catak, University of Stavanger, 2026). The paper asks how many copies of a quantum state a learner needs when the observables it must evaluate are incompatible (cannot be measured sharply together). It defines an incompatibility number kappa = 1/eta*^2 from the joint-measurability threshold eta*, proves that for anticommuting Pauli blocks of size G the copy cost is a factor G for every single-copy strategy, and shows that for weakly incompatible qubit pairs at angle theta a joint unsharp POVM costs 1 + sin(theta), less than sharp grouping (2).
+
+Key facts:
+- Joint POVM of G pairwise-anticommuting observables: E_s = (I + sum_i s_i A_i / sqrt(G)) / 2^G, sharpness eta* = 1/sqrt(G), kappa = G.
+- Qubit pair at angle theta: eta*(theta) = 1/(cos(theta/2) + sin(theta/2)), kappa(theta) = 1 + sin(theta).
+- Thresholds are verified by semidefinite programming (CVXPY + Clarabel).
+- Joint POVMs are implemented as randomized single-qubit basis measurements; readout noise rescales sharpness by 1 - p01 - p10, and full (asymmetric) calibration removes it.
+- All results are simulations (NumPy Monte Carlo; Qiskit Aer with the FakeKingston noise model). No quantum hardware data.
+
+## Notebooks
+- [01 operators and SDP thresholds](notebooks/01_operators_and_sdp_thresholds.ipynb): exact joint-POVM checks; Table 1 (SDP thresholds, kappa)
+- [02 anticommuting selection](notebooks/02_anticommuting_selection.ipynb): selection on hard instances, grouped vs joint POVM vs sequential halving; Figs. 2-3
+- [03 qubit pairs](notebooks/03_qubit_pairs.ipynb): copy cost vs angle for qubit pairs; Fig. 4
+- [04 noisy simulation](notebooks/04_noisy_simulation.ipynb): randomized-basis circuits, readout calibration, bootstrap; Tables 2-3, Fig. 5
+
+## Source
+- [src/copycost](src/copycost): operators.py, sdp.py, selection.py, pairs.py, style.py
+- [src/jointpovm](src/jointpovm): Qiskit implementation (schemes, circuits, sampling, executors, analysis, experiment)
+- [scripts](scripts): command-line runs; run_hardware.py is a dry run unless --submit --confirm is given
+- [tests](tests): pytest suite
+
+## Docs
+- [README](README.md): overview, results, quick start, FAQ, citation
+- [CITATION.cff](CITATION.cff)

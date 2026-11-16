@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the preprint below."
+title: "The Copy Cost of Incompatibility: code and data"
+type: software
+authors:
+  - family-names: Catak
+    given-names: Ferhat Özgur
+    affiliation: University of Stavanger
+repository-code: "https://github.com/ocatak/quantum-learning-copy-cost"
+version: 1.0.0
+date-released: 2026-11-16
+keywords:
+  - quantum learning theory
+  - sample complexity
+  - incompatible observables
+  - joint measurability
+  - unsharp measurement
+  - POVM
+  - semidefinite programming
+  - anticommuting Pauli operators
+  - randomized measurements
+  - readout error mitigation
+  - Qiskit
+abstract: >-
+  Reproducible Python code for "The Copy Cost of Incompatibility". It computes
+  joint-measurability thresholds by semidefinite programming, runs Monte Carlo
+  experiments on the copy (sample) complexity of learning with incompatible quantum
+  observables (anticommuting Pauli blocks and qubit pairs), and simulates the
+  randomized-basis implementation of joint unsharp measurements on Qiskit Aer with a
+  device-derived noise model and readout calibration.
+preferred-citation:
+  type: article
+  title: "The Copy Cost of Incompatibility"
+  authors:
+    - family-names: Catak
+      given-names: Ferhat Özgur
+      affiliation: University of Stavanger
+  year: 2026
+  status: preprint
