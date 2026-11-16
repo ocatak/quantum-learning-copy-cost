@@ -35,10 +35,13 @@ a **joint unsharp measurement** (a POVM that reads every observable with reduced
 
 This repository contains the code behind the preprint *The Copy Cost of Incompatibility*, which shows that:
 
-* the price of incompatibility is captured by an **incompatibility number κ = 1/η\*²**, where η\* is the
-  joint-measurability threshold, computed here by **semidefinite programming (SDP)**;
-* for **anticommuting Pauli blocks** of size G, κ = G and no single-copy strategy beats a factor G in copies:
-  neither unsharp joint measurements, nor entangled measurements across blocks, nor adaptivity;
+* the price of incompatibility is captured by an **incompatibility number κ**: the smallest total cost
+  Σ_g η\*(C_g)⁻² over partitions of the observables into groups C_g, where η\*(C) is the joint-measurability
+  threshold of group C, computed here by **semidefinite programming (SDP)**. It satisfies 1 ≤ κ ≤ G, the number
+  of compatible measurement contexts;
+* for **anticommuting Pauli blocks** of size G, κ = G. Non-adaptive single-copy learners need a factor G more
+  copies, and this is tight up to constants, even with unsharp joint measurements or entangled measurements
+  across blocks. Adaptive learners also pay a factor G; whether adaptivity can remove a log K factor is open;
 * for **weakly incompatible qubit pairs** at angle θ, the joint POVM costs κ(θ) = 1 + sin θ and **beats every
   sharp grouping** (which costs 2);
 * the joint POVMs can be implemented as **randomized single-qubit basis measurements**, which are simulated
@@ -49,8 +52,8 @@ This repository contains the code behind the preprint *The Copy Cost of Incompat
 flowchart LR
     A["Incompatible observables<br/>A₁ … A_G"] --> B{"How to measure<br/>on one copy?"}
     B -->|"sharp grouping<br/>(G contexts)"| C["cost ∝ cover number G"]
-    B -->|"joint unsharp POVM<br/>sharpness η*"| D["cost ∝ κ = 1/η*²"]
-    D --> E["Anticommuting block:<br/>κ = G (tight lower bound)"]
+    B -->|"joint unsharp POVM<br/>sharpness η*"| D["cost ∝ κ = min Σ η*(C_g)⁻²"]
+    D --> E["Anticommuting block:<br/>κ = G (matching lower bound)"]
     D --> F["Qubit pair at angle θ:<br/>κ = 1 + sin θ &lt; 2"]
     D --> G["Randomized basis circuits<br/>+ readout calibration<br/>(noisy Qiskit simulation)"]
 ```
@@ -99,7 +102,7 @@ pip install -e .
 jupyter lab notebooks/
 ```
 
-Run all notebooks from the command line (about 2 minutes on a laptop):
+Run all notebooks from the command line (a few minutes on a laptop):
 
 ```bash
 cd notebooks
@@ -153,7 +156,9 @@ quantum-learning-copy-cost/
 * **Checks against the paper.** Each notebook compares its output with `reference/`:
   * Table 1 and Tables 2–3 are reproduced exactly.
   * The qubit-pair curve matches at 18 of 19 angles.
-  * The selection curves agree within Monte Carlo error.
+  * The selection curves agree within Monte Carlo error. The rerun in notebook 2 gives B₀.₉ ≈ 1501 G and a
+    normalized cost of 3.24–3.43; the paper, computed from `reference/sim_anticommuting.json`, quotes 1507 G and
+    3.27–3.40. The difference is Monte Carlo and bisection error (B₀.₉ differs by at most 2.4%).
 * **Full metadata.** Every results file records package versions, seeds, transpiled circuit depth, the qubit
   used and the backend calibration values.
 * **No quantum hardware needed.** `FakeKingston` runs locally on Qiskit Aer with a stored calibration snapshot of
@@ -192,16 +197,20 @@ transpiles the plan and prints the job summary and estimated QPU time. Jobs are 
 <details>
 <summary><b>What is the incompatibility number κ?</b></summary>
 
-For a family of ±1-valued observables, η\* is the largest sharpness at which all of them have a joint POVM with
-marginals (I + η A_k)/2. The incompatibility number is κ = 1/η\*². A learner using that joint POVM pays a factor κ
-in copies relative to an ideal learner that could read every observable sharply on every copy.
+For a group C of ±1-valued observables, η\*(C) is the largest sharpness at which all of them have a joint POVM
+with marginals (I + η A_k)/2. The incompatibility number κ is the smallest total cost Σ_g η\*(C_g)⁻² over
+partitions of the family into groups C_g. Splitting into G compatible contexts costs G, so 1 ≤ κ ≤ G. A learner
+that measures each group jointly at its threshold pays a factor κ in copies relative to an ideal learner that
+could read every observable sharply on every copy. For a single anticommuting block, κ = 1/η\*² = G; for a qubit
+pair at angle θ, κ = 1/η\*² = 1 + sin θ ≤ 2.
 </details>
 
 <details>
 <summary><b>Is joint (unsharp) measurement better than grouping observables into compatible contexts?</b></summary>
 
 It depends on the family. For pairwise anticommuting Pauli operators (G per block), κ = G equals the number of
-contexts, so the two strategies cost the same, and the paper proves that nothing single-copy does better. For two
+contexts, so the two strategies cost the same. The paper proves that no non-adaptive single-copy learner does
+better (up to constants), and that adaptive learners also pay the factor G, up to an open log K factor. For two
 qubit observables at angle θ, κ(θ) = 1 + sin θ < 2, so the joint POVM beats sharp grouping. Notebook 3 shows this.
 </details>
 
