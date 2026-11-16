@@ -108,10 +108,6 @@ for nb in 0*.ipynb; do
 done
 ```
 
-> [!NOTE]
-> Figures are typeset with LaTeX when a `latex` binary is available, as in the paper. Without LaTeX,
-> matplotlib's bundled Computer Modern fonts are used; the data are the same.
-
 ## Notebooks
 
 | # | Notebook | What it computes | Run time |
