@@ -1,6 +1,6 @@
 <div align="center">
 
-# The Copy Cost of Incompatibility
+# Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection
 
 ### How many quantum state copies does it cost to learn from incompatible observables?
 
@@ -33,17 +33,20 @@ problem: **incompatible observables cannot be measured sharply on the same copy*
 to split the copies into groups of compatible observables (measurement contexts). The quantum alternative is
 a **joint unsharp measurement** (a POVM that reads every observable with reduced sharpness η on every copy).
 
-This repository contains the code behind the preprint *The Copy Cost of Incompatibility*, which shows that:
+This repository contains the code behind the preprint *Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection*, which shows that:
 
-* the price of incompatibility is captured by an **incompatibility number κ**: the smallest total cost
-  Σ_g η\*(C_g)⁻² over partitions of the observables into groups C_g, where η\*(C) is the joint-measurability
-  threshold of group C, computed here by **semidefinite programming (SDP)**. It satisfies 1 ≤ κ ≤ G, the number
-  of compatible measurement contexts;
+* the price of incompatibility is captured by an **incompatibility number κ**: the value of a covering
+  linear program. Weights w_C ≥ 0 on groups C must give every observable Σ_{C∋k} w_C η\*(C)² ≥ 1, and κ is
+  the smallest total weight Σ_C w_C. Here η\*(C) is the joint-measurability threshold of group C, computed by
+  **semidefinite programming (SDP)**. Groups may overlap, so κ can be smaller than the best partition. With
+  commuting groups only, the program is the fractional chromatic number of the conflict graph, so
+  1 ≤ κ ≤ G, the number of compatible measurement contexts;
 * for **anticommuting Pauli blocks** of size G, κ = G. Non-adaptive single-copy learners need a factor G more
   copies, and this is tight up to constants, even with unsharp joint measurements or entangled measurements
   across blocks. Adaptive learners also pay a factor G; whether adaptivity can remove a log K factor is open;
 * for **weakly incompatible qubit pairs** at angle θ, the joint POVM costs κ(θ) = 1 + sin θ and **beats every
-  sharp grouping** (which costs 2);
+  sharp grouping** (which costs 2) in the upper bound; no matching lower bound is known for the pair, and for
+  the Pauli families examined, randomised sharp grouping already attains κ;
 * the joint POVMs can be implemented as **randomized single-qubit basis measurements**, which are simulated
   here with the calibration-based noise model of a 156-qubit IBM Heron r2 device, including **readout-error
   calibration**.
@@ -52,7 +55,7 @@ This repository contains the code behind the preprint *The Copy Cost of Incompat
 flowchart LR
     A["Incompatible observables<br/>A₁ … A_G"] --> B{"How to measure<br/>on one copy?"}
     B -->|"sharp grouping<br/>(G contexts)"| C["cost ∝ cover number G"]
-    B -->|"joint unsharp POVM<br/>sharpness η*"| D["cost ∝ κ = min Σ η*(C_g)⁻²"]
+    B -->|"joint unsharp POVM<br/>sharpness η*"| D["cost ∝ κ = min Σ w_C<br/>s.t. Σ w_C η*(C)² ≥ 1"]
     D --> E["Anticommuting block:<br/>κ = G (matching lower bound)"]
     D --> F["Qubit pair at angle θ:<br/>κ = 1 + sin θ &lt; 2"]
     D --> G["Randomized basis circuits<br/>+ readout calibration<br/>(noisy Qiskit simulation)"]
@@ -87,9 +90,9 @@ rescales it by 1 − p₀₁ − p₁₀, and calibration removes the rescaling.
 
 | Table | Content | Notebook | Output |
 |---|---|---|---|
-| Table 1 | SDP joint-measurability thresholds vs. closed forms, incompatibility numbers κ | 01 | `results/table1_sdp.tex` |
-| Table 2 | Tomographic sharpness of the pair POVM, raw and calibrated (noise model, qubit 72) | 04 | `results/table2_noisysim.tex` |
-| Table 3 | Effect of asymmetric readout error and of symmetric vs. full calibration | 04 | `results/table3_asym.tex` |
+| Table 2 | SDP joint-measurability thresholds vs. closed forms, incompatibility numbers κ | 01 | `results/table1_sdp.tex` |
+| Table 3 | Tomographic sharpness of the pair POVM, raw and calibrated (noise model, qubit 72) | 04 | `results/table2_noisysim.tex` |
+| Table 4 | Effect of asymmetric readout error and of symmetric vs. full calibration | 04 | `results/table3_asym.tex` |
 
 ## Quick start
 
@@ -115,10 +118,10 @@ done
 
 | # | Notebook | What it computes | Run time |
 |---|---|---|---|
-| 1 | [`01_operators_and_sdp_thresholds`](notebooks/01_operators_and_sdp_thresholds.ipynb) | Machine-precision checks of the joint POVM (positivity, completeness, marginals, Born rule) for G ≤ 9; SDP thresholds η\* for anticommuting blocks and qubit pairs (**Table 1**) | < 1 min |
+| 1 | [`01_operators_and_sdp_thresholds`](notebooks/01_operators_and_sdp_thresholds.ipynb) | Machine-precision checks of the joint POVM (positivity, completeness, marginals, Born rule) for G ≤ 9; SDP thresholds η\* for anticommuting blocks and qubit pairs (**Table 2**) | < 1 min |
 | 2 | [`02_anticommuting_selection`](notebooks/02_anticommuting_selection.ipynb) | Monte Carlo selection on hard instances (K = 90, ε = 0.1): grouped contexts, joint POVM, sequential halving (**Figs. 2, 3**) | ~1 min |
 | 3 | [`03_qubit_pairs`](notebooks/03_qubit_pairs.ipynb) | Copies needed to estimate all correlations of 10 qubit pairs vs. angle θ (**Fig. 4**) | < 1 min |
-| 4 | [`04_noisy_simulation`](notebooks/04_noisy_simulation.ipynb) | Randomized-basis circuits on Qiskit Aer with the `FakeKingston` noise model and an asymmetric readout model; marginal tomography, calibration, bootstrap intervals (**Tables 2, 3, Fig. 5**) | < 1 min |
+| 4 | [`04_noisy_simulation`](notebooks/04_noisy_simulation.ipynb) | Randomized-basis circuits on Qiskit Aer with the `FakeKingston` noise model and an asymmetric readout model; marginal tomography, calibration, bootstrap intervals (**Tables 3, 4, Fig. 5**) | < 1 min |
 
 The notebooks are committed **with their outputs**, so they can be read on GitHub without running anything.
 Notebooks 2–4 have a `RECOMPUTE` flag; set it to `False` to redraw from saved results.
@@ -154,7 +157,7 @@ quantum-learning-copy-cost/
 * **Fixed seeds.** Selection (20261114), qubit pairs (7), operator checks (1), shot allocation (1234),
   simulator (4321), bootstrap (99).
 * **Checks against the paper.** Each notebook compares its output with `reference/`:
-  * Table 1 and Tables 2–3 are reproduced exactly.
+  * Table 2 and Tables 3–4 are reproduced exactly.
   * The qubit-pair curve matches at 18 of 19 angles.
   * The selection curves agree within Monte Carlo error. The rerun in notebook 2 gives B₀.₉ ≈ 1501 G and a
     normalized cost of 3.24–3.43; the paper, computed from `reference/sim_anticommuting.json`, quotes 1507 G and
@@ -198,10 +201,13 @@ transpiles the plan and prints the job summary and estimated QPU time. Jobs are 
 <summary><b>What is the incompatibility number κ?</b></summary>
 
 For a group C of ±1-valued observables, η\*(C) is the largest sharpness at which all of them have a joint POVM
-with marginals (I + η A_k)/2. The incompatibility number κ is the smallest total cost Σ_g η\*(C_g)⁻² over
-partitions of the family into groups C_g. Splitting into G compatible contexts costs G, so 1 ≤ κ ≤ G. A learner
-that measures each group jointly at its threshold pays a factor κ in copies relative to an ideal learner that
-could read every observable sharply on every copy. For a single anticommuting block, κ = 1/η\*² = G; for a qubit
+with marginals (I + η A_k)/2. One copy measured with group C gives each member the information of η\*(C)²
+exact readings. A weighted cover assigns weights w_C ≥ 0 to groups so that every observable k receives
+Σ_{C∋k} w_C η\*(C)² ≥ 1, and the incompatibility number κ is the smallest total weight Σ_C w_C. Groups may
+overlap, so κ is at most the best partition cost Σ_g η\*(C_g)⁻²; for the 5-cycle of Pauli strings in the paper,
+κ = 5/2 while the best partition costs 2.639. Splitting into G compatible contexts costs G, so 1 ≤ κ ≤ G. A
+learner that spends a fraction w_C/κ of its copies on each group, measured jointly at its threshold, pays a
+factor κ in copies relative to an ideal learner that could read every observable sharply on every copy. For a single anticommuting block, κ = 1/η\*² = G; for a qubit
 pair at angle θ, κ = 1/η\*² = 1 + sin θ ≤ 2.
 </details>
 
@@ -253,7 +259,7 @@ If you use this code, please cite the preprint ([`CITATION.cff`](CITATION.cff) i
 ```bibtex
 @misc{catak2026copycost,
   author       = {Catak, Ferhat {\"O}zgur},
-  title        = {The Copy Cost of Incompatibility},
+  title        = {Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection},
   year         = {2026},
   howpublished = {Preprint},
   note         = {Code: \url{https://github.com/ocatak/quantum-learning-copy-cost}}

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the preprint below."
-title: "The Copy Cost of Incompatibility: code and data"
+title: "Code and data for: Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection"
 type: software
 authors:
   - family-names: Catak
@@ -22,7 +22,7 @@ keywords:
   - readout error mitigation
   - Qiskit
 abstract: >-
-  Reproducible Python code for "The Copy Cost of Incompatibility". It computes
+  Reproducible Python code for "Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection". It computes
   joint-measurability thresholds by semidefinite programming, runs Monte Carlo
   experiments on the copy (sample) complexity of learning with incompatible quantum
   observables (anticommuting Pauli blocks and qubit pairs), and simulates the
@@ -30,7 +30,7 @@ abstract: >-
   device-derived noise model and readout calibration.
 preferred-citation:
   type: article
-  title: "The Copy Cost of Incompatibility"
+  title: "Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection"
   authors:
     - family-names: Catak
       given-names: Ferhat Özgur

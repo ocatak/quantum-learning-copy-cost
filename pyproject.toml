@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "quantum-learning-copy-cost"
 version = "1.0.0"
-description = "The Copy Cost of Incompatibility: joint measurability, unsharp POVMs and the sample complexity of learning with incompatible quantum observables"
+description = "Code for 'Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection': joint measurability, unsharp POVMs and the sample complexity of learning with incompatible quantum observables"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "Ferhat Özgur Catak" }]

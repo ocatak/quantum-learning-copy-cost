@@ -1,4 +1,4 @@
-"""Numerics for the main text of "The Copy Cost of Incompatibility".
+"""Numerics for the main text of "Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection".
 
 * ``operators``  anticommuting Pauli families and exact checks of the joint POVM
 * ``sdp``        joint-measurability thresholds by semidefinite programming

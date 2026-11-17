@@ -1,6 +1,6 @@
 # quantum-learning-copy-cost
 
-> Reproducible Python code for the preprint "The Copy Cost of Incompatibility" (F. Ö. Catak, University of Stavanger, 2026). The paper asks how many copies of a quantum state a learner needs when the observables it must evaluate are incompatible (cannot be measured sharply together). It defines an incompatibility number kappa, the smallest total cost sum_g eta*(C_g)^-2 over partitions of the observables into jointly measured groups (1 <= kappa <= G), proves that for anticommuting Pauli blocks of size G kappa = G and the copy cost is a factor G for single-copy learners (tight for non-adaptive learners; a log K gap remains open for adaptive ones), and shows that for weakly incompatible qubit pairs at angle theta a joint unsharp POVM costs 1 + sin(theta), less than sharp grouping (2).
+> Reproducible Python code for the preprint "Quantum Measurement Incompatibility Multiplies Sample Complexity: Minimax Bounds for Model Selection" (F. Ö. Catak, University of Stavanger, 2026). The paper asks how many copies of a quantum state a learner needs when the observables it must evaluate are incompatible (cannot be measured sharply together). It defines an incompatibility number kappa as the value of a covering linear program: weights w_C >= 0 on (possibly overlapping) groups C of observables must satisfy sum_{C containing k} w_C eta*(C)^2 >= 1 for every observable k, and kappa = min sum_C w_C. Here eta*(C) is the joint-measurability threshold of C (an SDP). Restricted to commuting groups, the program is the fractional chromatic number of the conflict graph, so 1 <= kappa <= G, and kappa is at most the best partition cost sum_g eta*(C_g)^-2. The paper proves that for anticommuting Pauli blocks of size G kappa = G and the copy cost is a factor G for single-copy learners (tight for non-adaptive learners; a log K gap remains open for adaptive ones), and shows that for weakly incompatible qubit pairs at angle theta a joint unsharp POVM costs 1 + sin(theta), less than sharp grouping (2), in the upper bound; for the Pauli families examined, randomised sharp grouping already attains kappa.
 
 Key facts:
 - Joint POVM of G pairwise-anticommuting observables: E_s = (I + sum_i s_i A_i / sqrt(G)) / 2^G, sharpness eta* = 1/sqrt(G), kappa = G.
@@ -10,10 +10,10 @@ Key facts:
 - All results are simulations (NumPy Monte Carlo; Qiskit Aer with the FakeKingston noise model). No quantum hardware data.
 
 ## Notebooks
-- [01 operators and SDP thresholds](notebooks/01_operators_and_sdp_thresholds.ipynb): exact joint-POVM checks; Table 1 (SDP thresholds, kappa)
+- [01 operators and SDP thresholds](notebooks/01_operators_and_sdp_thresholds.ipynb): exact joint-POVM checks; Table 2 (SDP thresholds, kappa)
 - [02 anticommuting selection](notebooks/02_anticommuting_selection.ipynb): selection on hard instances, grouped vs joint POVM vs sequential halving; Figs. 2-3
 - [03 qubit pairs](notebooks/03_qubit_pairs.ipynb): copy cost vs angle for qubit pairs; Fig. 4
-- [04 noisy simulation](notebooks/04_noisy_simulation.ipynb): randomized-basis circuits, readout calibration, bootstrap; Tables 2-3, Fig. 5
+- [04 noisy simulation](notebooks/04_noisy_simulation.ipynb): randomized-basis circuits, readout calibration, bootstrap; Tables 3-4, Fig. 5
 
 ## Source
 - [src/copycost](src/copycost): operators.py, sdp.py, selection.py, pairs.py, style.py
