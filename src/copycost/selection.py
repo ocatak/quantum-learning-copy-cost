@@ -91,3 +91,21 @@ def b90(fun, G: int, lo: float = 10, hi: float = 2e6) -> float:
         if hi / lo < 1.02:
             break
     return hi
+
+
+def b90_repeatability(learner: str, G_values=(1, 2, 3, 5, 6, 9, 10, 15, 18), reps: int = 5, T: int = 6000,
+                      K: int = K_DEFAULT, eps: float = EPS_DEFAULT) -> dict:
+    """Repeatability of B_0.9 (Section 6): the bisection of ``b90`` rerun with independent seeds
+    1000 + 17 r + G for run r and context number G. Reproduces reference/b90_reps.json."""
+    G_values = list(G_values)
+    vals = np.zeros((reps, len(G_values)))
+    for r in range(reps):
+        for i, G in enumerate(G_values):
+            rng = np.random.default_rng(1000 + 17 * r + G)
+            vals[r, i] = b90(lambda B, G_: success_nonadaptive(B, G_, learner, rng, T=T, K=K, eps=eps), G)
+    g = np.array(G_values, float)
+    norm = vals * eps ** 2 / (g * np.log(K))
+    slopes = [(g @ v) / (g @ g) for v in vals]
+    rel = vals.std(0, ddof=1) / vals.mean(0)
+    return {"b90": vals.tolist(), "slope_mean": float(np.mean(slopes)), "slope_sd": float(np.std(slopes, ddof=1)),
+            "max_rel_sd": float(rel.max()), "norm_min": float(norm.min()), "norm_max": float(norm.max())}

@@ -1,0 +1,1572 @@
+{
+ "five_cycle": {
+  "family": [
+   "IX",
+   "XI",
+   "IY",
+   "ZY",
+   "YX"
+  ],
+  "K": 5,
+  "G": 3,
+  "kappa": 2.5,
+  "kappa_part": 2.639320228061151,
+  "Lambda": 2.0000000000000044,
+  "K_over_Lambda": 2.4999999999999947,
+  "eta_full": 0.6155367070783383,
+  "cover": [
+   {
+    "group": [
+     "IX",
+     "XI"
+    ],
+    "weight": 0.5,
+    "eta": 1.0
+   },
+   {
+    "group": [
+     "IX",
+     "YX"
+    ],
+    "weight": 0.5,
+    "eta": 1.0
+   },
+   {
+    "group": [
+     "XI",
+     "IY"
+    ],
+    "weight": 0.5,
+    "eta": 1.0
+   },
+   {
+    "group": [
+     "IY",
+     "ZY"
+    ],
+    "weight": 0.5,
+    "eta": 1.0
+   },
+   {
+    "group": [
+     "ZY",
+     "YX"
+    ],
+    "weight": 0.5,
+    "eta": 1.0
+   }
+  ],
+  "kappa_sharp_only": 2.5,
+  "subfamily_bound": 2.4999999999999947,
+  "subfamily": [
+   "IX",
+   "XI",
+   "IY",
+   "ZY",
+   "YX"
+  ]
+ },
+ "random_families": [
+  {
+   "family": [
+    "XI",
+    "IZ",
+    "XY",
+    "XZ",
+    "ZY"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0000000312175255,
+   "kappa_part": 2.9999999883065644,
+   "Lambda": 2.9999999999999987,
+   "K_over_Lambda": 1.6666666666666674,
+   "eta_full": 0.5773502703148271,
+   "cover": [
+    {
+     "group": [
+      "XI",
+      "XY",
+      "ZY"
+     ],
+     "weight": 1.000000028030359,
+     "eta": 0.7071067712763193
+    },
+    {
+     "group": [
+      "IZ",
+      "XZ",
+      "ZY"
+     ],
+     "weight": 1.0000000018429616,
+     "eta": 0.7071067805349622
+    },
+    {
+     "group": [
+      "XI",
+      "IZ",
+      "XY",
+      "XZ"
+     ],
+     "weight": 1.0000000013442045,
+     "eta": 0.7071067807112995
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.999999999999996,
+   "subfamily": [
+    "IZ",
+    "XY",
+    "ZY"
+   ]
+  },
+  {
+   "family": [
+    "YX",
+    "XY",
+    "IX",
+    "XI",
+    "IZ"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0000000310078807,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000044,
+   "K_over_Lambda": 2.4999999999999947,
+   "eta_full": 0.5773502690747276,
+   "cover": [
+    {
+     "group": [
+      "YX",
+      "IX",
+      "IZ"
+     ],
+     "weight": 1.0000000280193446,
+     "eta": 0.7071067712802135
+    },
+    {
+     "group": [
+      "XY",
+      "XI",
+      "IZ"
+     ],
+     "weight": 1.0000000018429636,
+     "eta": 0.7071067805349616
+    },
+    {
+     "group": [
+      "YX",
+      "XY",
+      "IX",
+      "XI"
+     ],
+     "weight": 1.0000000011455725,
+     "eta": 0.7071067807815264
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999973,
+   "subfamily": [
+    "XY",
+    "IX",
+    "IZ"
+   ]
+  },
+  {
+   "family": [
+    "ZY",
+    "IX",
+    "ZZ",
+    "YI",
+    "IZ"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000044,
+   "K_over_Lambda": 2.4999999999999947,
+   "eta_full": 0.5547001962245878,
+   "cover": [
+    {
+     "group": [
+      "ZY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IX",
+      "YI"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZZ",
+      "IZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "ZY",
+    "IX",
+    "ZZ"
+   ]
+  },
+  {
+   "family": [
+    "XI",
+    "XY",
+    "ZX",
+    "IX",
+    "ZY"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 2.9999999999989813,
+   "kappa_part": 2.9999999999989813,
+   "Lambda": 2.0000000000000044,
+   "K_over_Lambda": 2.4999999999999947,
+   "eta_full": 0.5773502681782736,
+   "cover": [
+    {
+     "group": [
+      "XI",
+      "IX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XY",
+      "ZX",
+      "ZY"
+     ],
+     "weight": 1.9999999999989813,
+     "eta": 0.7071067811867277
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.999999999999996,
+   "subfamily": [
+    "XI",
+    "ZX",
+    "ZY"
+   ]
+  },
+  {
+   "family": [
+    "XI",
+    "XZ",
+    "XX",
+    "YX",
+    "XY"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0000000036859293,
+   "kappa_part": 2.9999999999692015,
+   "Lambda": 2.0000000000000044,
+   "K_over_Lambda": 2.4999999999999947,
+   "eta_full": 0.5773502691925894,
+   "cover": [
+    {
+     "group": [
+      "XI",
+      "XX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XZ",
+      "YX",
+      "XY"
+     ],
+     "weight": 2.0000000036859293,
+     "eta": 0.7071067805349611
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "XZ",
+    "XX",
+    "XY"
+   ]
+  },
+  {
+   "family": [
+    "IX",
+    "ZZ",
+    "YZ",
+    "YY",
+    "XX"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0000000026887883,
+   "kappa_part": 3.0,
+   "Lambda": 2.9999999999999987,
+   "K_over_Lambda": 1.6666666666666674,
+   "eta_full": 0.5773502691776792,
+   "cover": [
+    {
+     "group": [
+      "IX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZZ",
+      "YZ",
+      "YY",
+      "XX"
+     ],
+     "weight": 2.0000000026887883,
+     "eta": 0.7071067807112325
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999973,
+   "subfamily": [
+    "IX",
+    "ZZ",
+    "YZ"
+   ]
+  },
+  {
+   "family": [
+    "XX",
+    "ZX",
+    "YI",
+    "ZZ",
+    "XI"
+   ],
+   "K": 5,
+   "G": 4,
+   "kappa": 4.000000003685935,
+   "kappa_part": 3.9999996946452803,
+   "Lambda": 2.000000000000004,
+   "K_over_Lambda": 2.499999999999995,
+   "eta_full": 0.5000000190846711,
+   "cover": [
+    {
+     "group": [
+      "ZX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YI"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XX",
+      "ZZ",
+      "XI"
+     ],
+     "weight": 2.0000000036859347,
+     "eta": 0.7071067805349602
+    }
+   ],
+   "kappa_sharp_only": 4.0,
+   "subfamily_bound": 3.9999999999999947,
+   "subfamily": [
+    "ZX",
+    "YI",
+    "ZZ",
+    "XI"
+   ]
+  },
+  {
+   "family": [
+    "XI",
+    "YX",
+    "IX",
+    "XZ",
+    "IY"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.000000001141288,
+   "kappa_part": 2.9999999999914193,
+   "Lambda": 2.0000000000000036,
+   "K_over_Lambda": 2.4999999999999956,
+   "eta_full": 0.5773502690612264,
+   "cover": [
+    {
+     "group": [
+      "XZ"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XI",
+      "IY"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YX",
+      "IX",
+      "IY"
+     ],
+     "weight": 0.9999999999957097,
+     "eta": 0.7071067811880644
+    },
+    {
+     "group": [
+      "XI",
+      "YX",
+      "IX",
+      "XZ"
+     ],
+     "weight": 1.0000000011455783,
+     "eta": 0.7071067807815244
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.999999999999997,
+   "subfamily": [
+    "IX",
+    "XZ",
+    "IY"
+   ]
+  },
+  {
+   "family": [
+    "XX",
+    "IY",
+    "ZY",
+    "YY",
+    "YZ"
+   ],
+   "K": 5,
+   "G": 2,
+   "kappa": 2.0,
+   "kappa_part": 2.0,
+   "Lambda": 3.000000000000003,
+   "K_over_Lambda": 1.666666666666665,
+   "eta_full": 0.6666666668652159,
+   "cover": [
+    {
+     "group": [
+      "IY",
+      "YY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XX",
+      "ZY",
+      "YZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 2.0,
+   "subfamily_bound": 1.9999999999999973,
+   "subfamily": [
+    "XX",
+    "IY"
+   ]
+  },
+  {
+   "family": [
+    "XZ",
+    "YY",
+    "ZI",
+    "ZZ",
+    "YI"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000044,
+   "K_over_Lambda": 2.4999999999999947,
+   "eta_full": 0.5656854226532686,
+   "cover": [
+    {
+     "group": [
+      "XZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YY",
+      "YI"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZI",
+      "ZZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "XZ",
+    "ZI",
+    "YI"
+   ]
+  },
+  {
+   "family": [
+    "ZZ",
+    "XX",
+    "YY",
+    "YZ",
+    "ZI"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.000000029369251,
+   "kappa_part": 3.0,
+   "Lambda": 2.9999999999999987,
+   "K_over_Lambda": 1.6666666666666674,
+   "eta_full": 0.577350268938155,
+   "cover": [
+    {
+     "group": [
+      "YZ"
+     ],
+     "weight": 0.49999999999999994,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZZ",
+      "ZI"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XX",
+      "YY",
+      "ZI"
+     ],
+     "weight": 1.0000000280249783,
+     "eta": 0.7071067712782216
+    },
+    {
+     "group": [
+      "ZZ",
+      "XX",
+      "YY",
+      "YZ"
+     ],
+     "weight": 1.000000001344273,
+     "eta": 0.7071067807112753
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999956,
+   "subfamily": [
+    "YY",
+    "YZ",
+    "ZI"
+   ]
+  },
+  {
+   "family": [
+    "XX",
+    "ZY",
+    "IZ",
+    "YI",
+    "IY"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0000000276893255,
+   "kappa_part": 2.999999843687345,
+   "Lambda": 2.0000000000000036,
+   "K_over_Lambda": 2.4999999999999956,
+   "eta_full": 0.5773502842308186,
+   "cover": [
+    {
+     "group": [
+      "IY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XX",
+      "ZY",
+      "IZ",
+      "YI"
+     ],
+     "weight": 2.0000000276893255,
+     "eta": 0.7071067762917201
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.999999999999997,
+   "subfamily": [
+    "XX",
+    "IZ",
+    "IY"
+   ]
+  },
+  {
+   "family": [
+    "XX",
+    "ZI",
+    "ZZ",
+    "IY",
+    "ZX"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.000000013115275,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000027,
+   "K_over_Lambda": 2.499999999999997,
+   "eta_full": 0.5656854226525799,
+   "cover": [
+    {
+     "group": [
+      "XX",
+      "ZZ"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZI",
+      "IY"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZI",
+      "ZX"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XX",
+      "ZZ",
+      "IY",
+      "ZX"
+     ],
+     "weight": 1.5000000131152753,
+     "eta": 0.5773502666655899
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.999999999999996,
+   "subfamily": [
+    "XX",
+    "IY",
+    "ZX"
+   ]
+  },
+  {
+   "family": [
+    "IZ",
+    "YZ",
+    "XX",
+    "IY",
+    "YY"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 2.999999999667773,
+   "kappa_part": 2.9999998436873785,
+   "Lambda": 2.0000000000000036,
+   "K_over_Lambda": 2.4999999999999956,
+   "eta_full": 0.5773502842308154,
+   "cover": [
+    {
+     "group": [
+      "IZ",
+      "YZ"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XX",
+      "YY"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IY",
+      "YY"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IZ",
+      "YZ",
+      "XX",
+      "IY"
+     ],
+     "weight": 1.4999999996677729,
+     "eta": 0.5773502692535629
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "IZ",
+    "XX",
+    "IY"
+   ]
+  },
+  {
+   "family": [
+    "XI",
+    "ZI",
+    "YY",
+    "ZZ",
+    "IZ"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 2.999999999667773,
+   "kappa_part": 3.0,
+   "Lambda": 3.0,
+   "K_over_Lambda": 1.6666666666666667,
+   "eta_full": 0.5773502689363648,
+   "cover": [
+    {
+     "group": [
+      "YY"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XI",
+      "IZ"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZI",
+      "ZZ",
+      "IZ"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XI",
+      "ZI",
+      "YY",
+      "ZZ"
+     ],
+     "weight": 1.4999999996677729,
+     "eta": 0.5773502692535629
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "XI",
+    "ZI",
+    "YY"
+   ]
+  },
+  {
+   "family": [
+    "YZ",
+    "IZ",
+    "XY",
+    "IY",
+    "YX"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0,
+   "kappa_part": 3.0,
+   "Lambda": 2.000000000000003,
+   "K_over_Lambda": 2.499999999999996,
+   "eta_full": 0.5656854226530217,
+   "cover": [
+    {
+     "group": [
+      "IY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YZ",
+      "IZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XY",
+      "YX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999956,
+   "subfamily": [
+    "YZ",
+    "IY",
+    "YX"
+   ]
+  },
+  {
+   "family": [
+    "ZZ",
+    "ZI",
+    "IZ",
+    "XZ",
+    "YZ"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0,
+   "kappa_part": 3.0,
+   "Lambda": 3.0,
+   "K_over_Lambda": 1.6666666666666667,
+   "eta_full": 0.5773502691821853,
+   "cover": [
+    {
+     "group": [
+      "XZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZZ",
+      "ZI",
+      "IZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "ZZ",
+    "XZ",
+    "YZ"
+   ]
+  },
+  {
+   "family": [
+    "ZX",
+    "XI",
+    "YX",
+    "XY",
+    "YY"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000044,
+   "K_over_Lambda": 2.4999999999999947,
+   "eta_full": 0.5656854226529558,
+   "cover": [
+    {
+     "group": [
+      "YX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZX",
+      "YY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XI",
+      "XY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999973,
+   "subfamily": [
+    "ZX",
+    "XI",
+    "YX"
+   ]
+  },
+  {
+   "family": [
+    "YZ",
+    "XZ",
+    "ZZ",
+    "YY",
+    "YX"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.000000056079515,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000044,
+   "K_over_Lambda": 2.4999999999999947,
+   "eta_full": 0.5773502691842901,
+   "cover": [
+    {
+     "group": [
+      "ZZ",
+      "YX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YZ",
+      "XZ",
+      "YY"
+     ],
+     "weight": 2.000000056079515,
+     "eta": 0.7071067712729965
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999973,
+   "subfamily": [
+    "YZ",
+    "XZ",
+    "ZZ"
+   ]
+  },
+  {
+   "family": [
+    "XY",
+    "ZY",
+    "YY",
+    "XZ",
+    "IY"
+   ],
+   "K": 5,
+   "G": 3,
+   "kappa": 3.0000000008133356,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000036,
+   "K_over_Lambda": 2.4999999999999956,
+   "eta_full": 0.5773502690768568,
+   "cover": [
+    {
+     "group": [
+      "XY",
+      "IY"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XY",
+      "ZY",
+      "YY",
+      "XZ"
+     ],
+     "weight": 1.4999999996677613,
+     "eta": 0.5773502692535651
+    },
+    {
+     "group": [
+      "ZY",
+      "YY",
+      "XZ",
+      "IY"
+     ],
+     "weight": 1.0000000011455743,
+     "eta": 0.7071067807815259
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.999999999999997,
+   "subfamily": [
+    "XY",
+    "ZY",
+    "YY"
+   ]
+  },
+  {
+   "family": [
+    "XI",
+    "YZ",
+    "ZI",
+    "YY",
+    "ZY",
+    "IY"
+   ],
+   "K": 6,
+   "G": 4,
+   "kappa": 4.0000000021999895,
+   "kappa_part": 3.999999999335533,
+   "Lambda": 2.9999999999999987,
+   "K_over_Lambda": 2.000000000000001,
+   "eta_full": 0.5000000000002619,
+   "cover": [
+    {
+     "group": [
+      "YY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XI",
+      "YZ",
+      "ZI",
+      "ZY",
+      "IY"
+     ],
+     "weight": 3.00000000219999,
+     "eta": 0.5773502689779316
+    }
+   ],
+   "kappa_sharp_only": 4.0,
+   "subfamily_bound": 3.9999999999999973,
+   "subfamily": [
+    "XI",
+    "YZ",
+    "ZI",
+    "YY"
+   ]
+  },
+  {
+   "family": [
+    "IZ",
+    "YI",
+    "IY",
+    "ZI",
+    "YZ",
+    "XI"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 3.0000000026886506,
+   "kappa_part": 3.0,
+   "Lambda": 2.9999999999999987,
+   "K_over_Lambda": 2.000000000000001,
+   "eta_full": 0.5656854287916191,
+   "cover": [
+    {
+     "group": [
+      "IY",
+      "XI"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IZ",
+      "YI",
+      "ZI",
+      "YZ"
+     ],
+     "weight": 2.0000000026886506,
+     "eta": 0.7071067807112568
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "YI",
+    "ZI",
+    "XI"
+   ]
+  },
+  {
+   "family": [
+    "YZ",
+    "YY",
+    "IZ",
+    "XI",
+    "YI",
+    "XZ"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 3.00000001384491,
+   "kappa_part": 2.999999965067641,
+   "Lambda": 3.0000000000000027,
+   "K_over_Lambda": 1.9999999999999982,
+   "eta_full": 0.5773502725509936,
+   "cover": [
+    {
+     "group": [
+      "YY",
+      "YI"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YZ",
+      "IZ",
+      "YI"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IZ",
+      "XI",
+      "XZ"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YZ",
+      "XI",
+      "YI",
+      "XZ"
+     ],
+     "weight": 1.00000001384491,
+     "eta": 0.7071067762916327
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999973,
+   "subfamily": [
+    "YZ",
+    "YY",
+    "XI"
+   ]
+  },
+  {
+   "family": [
+    "YZ",
+    "XY",
+    "IZ",
+    "IX",
+    "YI",
+    "XX"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 3.0000000280172108,
+   "kappa_part": 3.0,
+   "Lambda": 2.9999999999999987,
+   "K_over_Lambda": 2.000000000000001,
+   "eta_full": 0.5547001944473771,
+   "cover": [
+    {
+     "group": [
+      "YZ",
+      "XY"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IX",
+      "XX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YZ",
+      "IZ",
+      "YI"
+     ],
+     "weight": 0.49999999999999994,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XY",
+      "IZ",
+      "YI"
+     ],
+     "weight": 1.0000000280172108,
+     "eta": 0.7071067712809679
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999973,
+   "subfamily": [
+    "XY",
+    "IZ",
+    "IX"
+   ]
+  },
+  {
+   "family": [
+    "IX",
+    "IY",
+    "YX",
+    "YY",
+    "ZY",
+    "YZ"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 3.0,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000036,
+   "K_over_Lambda": 2.9999999999999947,
+   "eta_full": 0.5469181608126915,
+   "cover": [
+    {
+     "group": [
+      "IX",
+      "YX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IY",
+      "YY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "ZY",
+      "YZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.999999999999997,
+   "subfamily": [
+    "IX",
+    "IY",
+    "YZ"
+   ]
+  },
+  {
+   "family": [
+    "IY",
+    "YZ",
+    "YY",
+    "XY",
+    "ZX",
+    "ZZ"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 3.0,
+   "kappa_part": 3.0,
+   "Lambda": 3.0000000000000067,
+   "K_over_Lambda": 1.9999999999999956,
+   "eta_full": 0.565685424944919,
+   "cover": [
+    {
+     "group": [
+      "IY",
+      "YY"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "XY",
+      "ZZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YZ",
+      "XY",
+      "ZX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999973,
+   "subfamily": [
+    "IY",
+    "YZ",
+    "ZZ"
+   ]
+  },
+  {
+   "family": [
+    "ZZ",
+    "XX",
+    "YX",
+    "XZ",
+    "ZX",
+    "ZY"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 2.9999999999693987,
+   "kappa_part": 2.9999999999693987,
+   "Lambda": 3.0000000000000053,
+   "K_over_Lambda": 1.9999999999999964,
+   "eta_full": 0.5773502691925704,
+   "cover": [
+    {
+     "group": [
+      "ZZ",
+      "XX",
+      "YX",
+      "XZ",
+      "ZX",
+      "ZY"
+     ],
+     "weight": 2.9999999999693987,
+     "eta": 0.5773502691925704
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "ZZ",
+    "ZX",
+    "ZY"
+   ]
+  },
+  {
+   "family": [
+    "XI",
+    "IY",
+    "YY",
+    "XX",
+    "XZ",
+    "ZI"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 3.0,
+   "kappa_part": 3.0,
+   "Lambda": 2.0000000000000036,
+   "K_over_Lambda": 2.9999999999999947,
+   "eta_full": 0.5469181627390879,
+   "cover": [
+    {
+     "group": [
+      "XI",
+      "XZ"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IY",
+      "ZI"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YY",
+      "XX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "XI",
+    "YY",
+    "ZI"
+   ]
+  },
+  {
+   "family": [
+    "IZ",
+    "YX",
+    "ZZ",
+    "IY",
+    "YI",
+    "YY"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 3.0000000000311005,
+   "kappa_part": 3.0,
+   "Lambda": 3.0000000000000053,
+   "K_over_Lambda": 1.9999999999999964,
+   "eta_full": 0.5656854287910814,
+   "cover": [
+    {
+     "group": [
+      "IZ",
+      "ZZ"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "YX",
+      "ZZ"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IY",
+      "YI",
+      "YY"
+     ],
+     "weight": 0.5,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IZ",
+      "YX",
+      "IY",
+      "YI",
+      "YY"
+     ],
+     "weight": 1.5000000000311007,
+     "eta": 0.5773502691836404
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.9999999999999982,
+   "subfamily": [
+    "IZ",
+    "YX",
+    "IY"
+   ]
+  },
+  {
+   "family": [
+    "ZI",
+    "ZX",
+    "IX",
+    "XI",
+    "XX",
+    "ZZ"
+   ],
+   "K": 6,
+   "G": 3,
+   "kappa": 3.0000000026885516,
+   "kappa_part": 2.9999999643237523,
+   "Lambda": 3.0000000000000044,
+   "K_over_Lambda": 1.9999999999999971,
+   "eta_full": 0.5773502726225743,
+   "cover": [
+    {
+     "group": [
+      "ZI",
+      "ZX",
+      "IX"
+     ],
+     "weight": 1.0,
+     "eta": 1.0
+    },
+    {
+     "group": [
+      "IX",
+      "XI",
+      "XX",
+      "ZZ"
+     ],
+     "weight": 2.0000000026885516,
+     "eta": 0.7071067807112743
+    }
+   ],
+   "kappa_sharp_only": 3.0,
+   "subfamily_bound": 2.999999999999997,
+   "subfamily": [
+    "ZX",
+    "XI",
+    "ZZ"
+   ]
+  }
+ ]
+}

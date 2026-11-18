@@ -14,9 +14,10 @@ Key facts:
 - [02 anticommuting selection](notebooks/02_anticommuting_selection.ipynb): selection on hard instances, grouped vs joint POVM vs sequential halving; Figs. 2-3
 - [03 qubit pairs](notebooks/03_qubit_pairs.ipynb): copy cost vs angle for qubit pairs; Fig. 4
 - [04 noisy simulation](notebooks/04_noisy_simulation.ipynb): randomized-basis circuits, readout calibration, bootstrap; Tables 3-4, Fig. 5
+- [05 kappa and checks](notebooks/05_kappa_and_checks.ipynb): incompatibility number kappa by Algorithm 1 (SDP thresholds + covering LP), 5-cycle example, random-family test of Open problem 2, Born-rule check, typical instances, B_0.9 repeatability
 
 ## Source
-- [src/copycost](src/copycost): operators.py, sdp.py, selection.py, pairs.py, style.py
+- [src/copycost](src/copycost): operators.py, sdp.py, selection.py, pairs.py, kappa.py, checks.py, style.py
 - [src/jointpovm](src/jointpovm): Qiskit implementation (schemes, circuits, sampling, executors, analysis, experiment)
 - [scripts](scripts): command-line runs; run_hardware.py is a dry run unless --submit --confirm is given
 - [tests](tests): pytest suite

@@ -122,21 +122,24 @@ done
 | 2 | [`02_anticommuting_selection`](notebooks/02_anticommuting_selection.ipynb) | Monte Carlo selection on hard instances (K = 90, ε = 0.1): grouped contexts, joint POVM, sequential halving (**Figs. 2, 3**) | ~1 min |
 | 3 | [`03_qubit_pairs`](notebooks/03_qubit_pairs.ipynb) | Copies needed to estimate all correlations of 10 qubit pairs vs. angle θ (**Fig. 4**) | < 1 min |
 | 4 | [`04_noisy_simulation`](notebooks/04_noisy_simulation.ipynb) | Randomized-basis circuits on Qiskit Aer with the `FakeKingston` noise model and an asymmetric readout model; marginal tomography, calibration, bootstrap intervals (**Tables 3, 4, Fig. 5**) | < 1 min |
+| 5 | [`05_kappa_and_checks`](notebooks/05_kappa_and_checks.ipynb) | Incompatibility number κ by Algorithm 1 (SDP thresholds + covering LP); the 5-cycle example (κ = 5/2 < κ_part = 2.639 < G = 3); the 30-family test of Open problem 2; Born-rule check of the binomial model; typical instances; repeatability of B₀.₉ over five seeds (**Sections 5–7**) | ~10 min |
 
 The notebooks are committed **with their outputs**, so they can be read on GitHub without running anything.
-Notebooks 2–4 have a `RECOMPUTE` flag; set it to `False` to redraw from saved results.
+Notebooks 2–5 have a `RECOMPUTE` flag; set it to `False` to redraw from saved results.
 
 ## Repository layout
 
 ```
 quantum-learning-copy-cost/
-├── notebooks/              four notebooks that regenerate all tables and figures
+├── notebooks/              five notebooks that regenerate all tables, figures and quoted numbers
 ├── src/
 │   ├── copycost/           numerics of the main text
 │   │   ├── operators.py      anticommuting Pauli families (Jordan–Wigner), joint POVM checks
 │   │   ├── sdp.py            joint-measurability threshold η* by semidefinite programming
 │   │   ├── selection.py      hypothesis selection: grouped, joint POVM, sequential halving
 │   │   ├── pairs.py          estimation with weakly incompatible qubit pairs
+│   │   ├── kappa.py          incompatibility number κ (Algorithm 1: thresholds + covering LP), Λ, 5-cycle
+│   │   ├── checks.py         Born-rule check of the binomial model, typical instances
 │   │   └── style.py          figure style
 │   └── jointpovm/          randomized-basis implementation of joint POVMs (Qiskit)
 │       ├── axes, schemes, states, circuits, povm    schemes, states, circuits, POVM reconstruction
@@ -144,7 +147,7 @@ quantum-learning-copy-cost/
 │       ├── predictions, analysis, experiment        exact predictions, estimators, bootstrap, plan → run → analyse
 │       └── sdp, figures
 ├── scripts/                command-line runs (simulator, fake backend, IBM hardware dry run, reports)
-├── tests/                  pytest suite (operator identities, statistics, pipeline)
+├── tests/                  pytest suite (operator identities, κ, statistics, pipeline)
 ├── reference/              data behind the published figures and tables, for comparison
 ├── results/                notebook output: JSON with full metadata, LaTeX table rows
 └── figures/                notebook output: PDF and PNG figures
@@ -154,10 +157,16 @@ quantum-learning-copy-cost/
 
 * **Pinned environment.** `requirements.txt` pins every scientific package (NumPy, SciPy, CVXPY, Clarabel,
   Qiskit, Qiskit Aer, Qiskit IBM Runtime, matplotlib).
-* **Fixed seeds.** Selection (20261114), qubit pairs (7), operator checks (1), shot allocation (1234),
+* **Fixed seeds.** Selection (20261114), qubit pairs (7), operator checks (1), κ and random families (11),
+  Born-rule and typical instances (20261117), B₀.₉ repeatability (1000 + 17 r + G), shot allocation (1234),
   simulator (4321), bootstrap (99).
 * **Checks against the paper.** Each notebook compares its output with `reference/`:
   * Table 2 and Tables 3–4 are reproduced exactly.
+  * Notebook 5 reproduces κ, κ_part, G, Λ and the subfamily bound of the 5-cycle and of all 30 random families
+    exactly (one degenerate LP returns a different but equally optimal cover). Its Monte Carlo parts (Born-rule
+    check, typical instances, B₀.₉ repeatability) are bit-identical to the paper data only under the NumPy version
+    used for the paper; with the pinned NumPy they agree within Monte Carlo error, and the code is bit-identical to
+    the original scripts run in the same environment.
   * The qubit-pair curve matches at 18 of 19 angles.
   * The selection curves agree within Monte Carlo error. The rerun in notebook 2 gives B₀.₉ ≈ 1501 G and a
     normalized cost of 3.24–3.43; the paper, computed from `reference/sim_anticommuting.json`, quotes 1507 G and

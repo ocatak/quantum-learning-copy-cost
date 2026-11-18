@@ -1,7 +1,8 @@
 """Joint-measurability threshold by semidefinite programming.
 
 eta*(A_1..A_G) = max eta  s.t. there is a POVM {F_b}_{b in {+-1}^G} with marginals (I + eta b_k A_k)/2.
-The incompatibility number of Definition 1 is kappa = 1/eta*^2.
+For a single group, 1/eta*^2 is its cost in the covering program of Definition 3; the incompatibility
+number kappa of a family is the value of that program over all groups (see ``copycost.kappa``).
 """
 from __future__ import annotations
 
